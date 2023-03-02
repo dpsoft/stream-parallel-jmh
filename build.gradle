@@ -1,0 +1,37 @@
+plugins {
+    id "me.champeau.jmh" version "0.7.0"
+}
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+apply plugin: "idea"
+idea {
+    module {
+        scopes.PROVIDED.plus += [configurations.jmh]
+    }
+}
+
+
+group = 'dpsoft.stream'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+jmh {
+    fork = 1
+    threads = 1
+    warmupIterations = 1
+    iterations = 1
+    timeUnit = 'ns'
+    profilers = ['async']
+}
