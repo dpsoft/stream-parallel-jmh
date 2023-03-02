@@ -33,5 +33,4 @@ jmh {
     warmupIterations = 1
     iterations = 1
     timeUnit = 'ns'
-    profilers = ['async']
 }
